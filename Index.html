@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vitalynne | Nutracêuticos Avançados</title>
+<style>
+  :root{
+    --cor-fundo:#F8F5EF;
+    --cor-fundo-alt:#EFEAE0;
+    --verde-escuro:#1F3D2B;
+    --verde-suave:#2E5B3E;
+    --dourado:#C9A24B;
+    --dourado-claro:#E4C77E;
+    --texto:#2A2A2A;
+    --cinza-muted:#6b6b6b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif;}
+  body{background:var(--cor-fundo);color:var(--texto);line-height:1.6;}
+  a{text-decoration:none;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:'Playfair Display','Georgia',serif;}
+  .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+  header{background:var(--cor-fundo);border-bottom:1px solid #ddd4c0;padding:16px 20px;position:sticky;top:0;z-index:999;}
+  .logo-img{height:55px;}
+
+  .hero{background:var(--cor-fundo-alt);text-align:center;padding:80px 20px 60px;}
+  .hero h1{font-size:38px;max-width:750px;margin:0 auto 20px;color:var(--verde-escuro);}
+  .hero h1 em{color:var(--dourado);font-style:normal;}
+  .hero p{font-size:17px;color:var(--cinza-muted);max-width:600px;margin:0 auto 20px;}
+  .btn-cta{background:var(--dourado);padding:16px 40px;border-radius:40px;font-size:16px;font-weight:700;color:#fff;display:inline-block;transition:.3s;letter-spacing:.5px;}
+  .btn-cta:hover{background:var(--dourado-claro);}
+  .hero-images{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:40px;}
+  .hero-images img{width:150px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.08);}
+
+  .selo-confianca{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:18px;font-size:14px;color:var(--verde-escuro);font-weight:600;}
+  .selo-confianca span{color:var(--dourado);}
+
+  .beneficios{padding:70px 20px;}
+  .beneficios h2{text-align:center;font-size:30px;margin-bottom:10px;color:var(--verde-escuro);}
+  .beneficios > .container > p{text-align:center;margin-bottom:50px;color:var(--cinza-muted);}
+  .cards-beneficio{display:flex;justify-content:space-around;gap:20px;flex-wrap:wrap;}
+  .card-beneficio{background:#fff;border:1px solid #eae3d3;border-radius:12px;padding:35px 25px;flex:1;min-width:250px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.04);}
+  .card-beneficio h3{margin-top:15px;margin-bottom:10px;font-size:18px;color:var(--verde-escuro);}
+  .card-beneficio p{font-size:14px;color:var(--cinza-muted);}
+
+  .produtos{padding:70px 20px;background:var(--cor-fundo-alt);}
+  .produtos h2{text-align:center;font-size:30px;margin-bottom:10px;color:var(--verde-escuro);}
+  .produtos > .container > p{text-align:center;margin-bottom:50px;color:var(--cinza-muted);}
+  .grid-produto{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;}
+  .card-produto{background:#fff;border-radius:12px;padding:25px;display:flex;flex-direction:column;align-items:center;box-shadow:0 6px 18px rgba(0,0,0,.06);}
+  .tag{background:var(--verde-escuro);color:#fff;font-size:11px;letter-spacing:1px;padding:6px 16px;border-radius:20px;margin-bottom:15px;text-transform:uppercase;}
+  .card-produto img{width:140px;margin-bottom:15px;}
+  .card-produto h3{font-size:20px;margin-bottom:8px;color:var(--verde-escuro);}
+  .desc{font-size:14px;color:var(--cinza-muted);margin-bottom:18px;min-height:40px;text-align:center;}
+  .btn-comprar{background:var(--dourado);padding:12px 28px;border-radius:30px;font-weight:700;font-size:14px;color:#fff;margin-top:8px;display:inline-block;transition:.3s;}
+  .btn-comprar:hover{background:var(--dourado-claro);}
+
+  .oferta-box{background:var(--verde-escuro);padding:50px;margin-top:50px;border-radius:14px;text-align:center;color:#fff;}
+  .oferta-box h2{color:var(--dourado-claro);}
+  .oferta-box .escassez{font-size:13px;color:var(--dourado-claro);margin-top:8px;font-weight:600;letter-spacing:.3px;}
+  #countdown{display:flex;justify-content:center;gap:15px;margin:20px 0;font-size:14px;}
+  #countdown div{background:rgba(255,255,255,.08);padding:10px 16px;border-radius:8px;}
+
+  .depoimentos{padding:60px 20px;}
+  .depoimentos h2{text-align:center;font-size:28px;margin-bottom:40px;color:var(--verde-escuro);}
+  .grid-depoimentos{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+  .card-depoimento{background:#fff;border:1px solid #eae3d3;border-radius:12px;padding:25px;box-shadow:0 4px 15px rgba(0,0,0,.04);display:flex;flex-direction:column;}
+  .card-depoimento p{font-size:14px;color:var(--texto);margin-bottom:0;font-style:italic;}
+  .depoimento-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+  .depoimento-header .info .autor{font-weight:700;color:var(--verde-escuro);font-size:14px;}
+  .depoimento-header .info .estrelas{margin-bottom:0;font-size:13px;color:var(--dourado);}
+
+  .garantia-secao{background:var(--cor-fundo-alt);padding:50px 20px;text-align:center;}
+  .garantia-secao .container{max-width:650px;}
+  .garantia-secao h3{font-size:22px;color:var(--verde-escuro);margin-bottom:12px;}
+  .garantia-secao p{font-size:14px;color:var(--cinza-muted);}
+
+  .cta-final{padding:60px 20px;text-align:center;background:var(--verde-escuro);}
+  .cta-final h2{color:#fff;font-size:26px;margin-bottom:12px;}
+  .cta-final p{color:#dcd6c4;margin-bottom:24px;font-size:15px;}
+
+  .footer{background:var(--verde-escuro);padding:40px 20px;text-align:center;color:#e7e2d3;}
+  .footer a{color:var(--dourado-claro);}
+  .footer .contatos{margin-top:10px;font-size:14px;}
+
+  .botao-whats{position:fixed;bottom:24px;right:24px;background:#25D366;width:58px;height:58px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:28px;color:#fff;box-shadow:0 8px 18px rgba(0,0,0,.25);z-index:999;}
+  @media(max-width:600px){.hero h1{font-size:28px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container" style="display:flex;justify-content:center;align-items:center;">
+    <img src="Banner.jpg" alt="Vitalynne" class="logo-img" />
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Fórmulas comprovadas para <em>energia, equilíbrio e longevidade</em></h1>
+    <p>Nutracêuticos Avançados — curadoria de fórmulas de alta absorção, desenvolvidas com base científica para potencializar sua rotina.</p>
+    <a href="#produtos" class="btn-cta">Conheça os produtos</a>
+    <div class="selo-confianca">⭐⭐⭐⭐⭐ <span>+3.200</span> clientes satisfeitos</div>
+    <div class="hero-images">
+      <!-- <img src="link-da-imagem" /> -->
+    </div>
+  </div>
+</section>
+
+<section class="beneficios">
+  <div class="container">
+    <h2>Por que escolher a <span style="color:var(--dourado);">Vitalynne</span>?</h2>
+    <p>Fórmulas desenvolvidas para apoiar sua rotina com consistência e resultado real</p>
+    <div class="cards-beneficio">
+      <div class="card-beneficio">
+        <div style="font-size:36px;">🌙</div>
+        <h3>Noites mais tranquilas</h3>
+        <p>Fórmulas que ajudam a relaxar e melhorar o sono.</p>
+      </div>
+      <div class="card-beneficio">
+        <div style="font-size:36px;">🧠</div>
+        <h3>Foco e performance</h3>
+        <p>Suporte cognitivo para dias produtivos.</p>
+      </div>
+      <div class="card-beneficio">
+        <div style="font-size:36px;">🛡️</div>
+        <h3>Imunidade</h3>
+        <p>Antioxidantes que fortalecem sua saúde diária.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="produtos" id="produtos">
+  <div class="container">
+    <h2>Explore a linha <span style="color:var(--dourado);">Vitalynne</span></h2>
+    <p>Escolha o produto ideal para seu momento</p>
+    <div class="grid-produto">
+
+      <div class="card-produto">
+        <div class="tag">Pausa</div>
+        <img src="Bem-estar.jpg" alt="Bem-estar" />
+        <h3>Bem-estar</h3>
+        <p class="desc">Para pausa e autocuidado.</p>
+        <a href="https://wa.me/5551994938374?text=Quero%20comprar%20o%20Bem-estar" target="_blank" class="btn-comprar">Comprar agora</a>
+      </div>
+
+      <div class="card-produto">
+        <div class="tag">Presença</div>
+        <img src="Ativa.jpg" alt="Ativa" />
+        <h3>Ativa</h3>
+        <p class="desc">Para foco e energia.</p>
+        <a href="https://wa.me/5551994938374?text=Quero%20comprar%20o%20Ativa" target="_blank" class="btn-comprar">Comprar agora</a>
+      </div>
+
+      <div class="card-produto">
+        <div class="tag">Constância</div>
+        <img src="NAC.jpg" alt="NAC" />
+        <h3>NAC</h3>
+        <p class="desc">Cuidado diário, imunidade.</p>
+        <a href="https://wa.me/5551994938374?text=Quero%20comprar%20o%20NAC" target="_blank" class="btn-comprar">Comprar agora</a>
+      </div>
+
+    </div>
+
+    <div class="oferta-box">
+      <h2>🔥 Oferta de Lançamento</h2>
+      <p>Aproveite os preços especiais e transforme sua saúde!</p>
+      <div id="countdown">
+        <div><span id="dias">00</span><br/>DIAS</div>
+        <div><span id="horas">00</span><br/>HORAS</div>
+        <div><span id="minutos">00</span><br/>MIN</div>
+        <div><span id="segundos">00</span><br/>SEG</div>
+      </div>
+      <a href="#produtos" class="btn-cta">Ver ofertas</a>
+      <p class="escassez">⚠️ Estoque limitado nesta condição especial</p>
+    </div>
+  </div>
+</section>
+
+<section class="depoimentos">
+  <div class="container">
+    <h2>O que dizem nossos clientes</h2>
+    <div class="grid-depoimentos">
+
+      <div class="card-depoimento">
+        <div class="depoimento-header">
+          <div class="info">
+            <div class="autor">Fernanda R., 42 anos</div>
+            <div class="estrelas">★★★★★</div>
+          </div>
+        </div>
+        <p>"Comecei a tomar o Bem-estar e em poucas semanas minhas noites de sono melhoraram muito. Recomendo."</p>
+      </div>
+
+      <div class="card-depoimento">
+        <div class="depoimento-header">
+          <div class="info">
+            <div class="autor">Rosana M., 58 anos</div>
+            <div class="estrelas">★★★★★</div>
+          </div>
+        </div>
+        <p>"Estava com muita ansiedade antes de dormir, hoje relaxo muito mais rápido. O Bem-estar virou parte da minha rotina."</p>
+      </div>
+
+      <div class="card-depoimento">
+        <div class="depoimento-header">
+          <div class="info">
+            <div class="autor">Marcos T., 39 anos</div>
+            <div class="estrelas">★★★★★</div>
+          </div>
+        </div>
+        <p>"O Ativa mudou minha rotina de trabalho. Mais foco e disposição sem aquele nervosismo de cafeína."</p>
+      </div>
+
+      <div class="card-depoimento">
+        <div class="depoimento-header">
+          <div class="info">
+            <div class="autor">Paulo H., 61 anos</div>
+            <div class="estrelas">★★★★★</div>
+          </div>
+        </div>
+        <p>"Depois dos 60, minha energia tinha caído bastante. Com o Ativa, voltei a ter disposição para o dia a dia."</p>
+      </div>
+
+      <div class="card-depoimento">
+        <div class="depoimento-header">
+          <div class="info">
+            <div class="autor">Juliana P., 47 anos</div>
+            <div class="estrelas">★★★★★</div>
+          </div>
+        </div>
+        <p>"Uso o NAC há 2 meses e sinto uma diferença real na imunidade. Produto de qualidade."</p>
+      </div>
+
+      <div class="card-depoimento">
+        <div class="depoimento-header">
+          <div class="info">
+            <div class="autor">Antônio L., 67 anos</div>
+            <div class="estrelas">★★★★★</div>
+          </div>
+        </div>
+        <p>"Depois que comecei a tomar NAC, notei que fico menos gripado e me recupero mais rápido. Recomendo demais."</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="garantia-secao">
+  <div class="container">
+    <h3>🛡️ Garantia de 7 dias</h3>
+    <p>Se você não ficar satisfeito com sua compra, tem até <strong>7 dias corridos</strong> após o recebimento para solicitar a devolução, sem burocracia, conforme previsto pelo Código de Defesa do Consumidor.</p>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2>Pronto para transformar sua rotina?</h2>
+    <p>Escolha seu produto Vitalynne e sinta a diferença desde as primeiras semanas.</p>
+    <a href="#produtos" class="btn-cta">Ver produtos e preços</a>
+  </div>
+</section>
+
+<section class="footer">
+  <div class="container">
+    <p>© 2026 Vitalynne — Nutracêuticos Avançados. Todos os direitos reservados.</p>
+    <p class="contatos">📞 (51) 99493-8374 &nbsp;|&nbsp; <a href="https://wa.me/5551994938374" target="_blank">Fale conosco pelo WhatsApp</a></p>
+  </div>
+</section>
+
+<a href="https://wa.me/5551994938374" target="_blank" class="botao-whats">💬</a>
+
+<script>
+  const dataFinal = new Date();
+  dataFinal.setDate(dataFinal.getDate() + 3);
+  const tempoMeta = dataFinal.getTime();
+
+  function atualizarContagem(){
+    const agora = new Date().getTime();
+    const distancia = tempoMeta - agora;
+    if(distancia<=0){ document.getElementById('countdown').innerHTML="Oferta encerrada"; return; }
+    const dias = Math.floor(distancia/(1000*60*60*24));
+    const horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
+    const minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
+    const segundos = Math.floor((distancia%(1000*60))/1000);
+    document.getElementById('dias').textContent = String(dias).padStart(2,'0');
+    document.getElementById('horas').textContent = String(horas).padStart(2,'0');
+    document.getElementById('minutos').textContent = String(minutos).padStart(2,'0');
+    document.getElementById('segundos').textContent = String(segundos).padStart(2,'0');
+  }
+  setInterval(atualizarContagem, 1000);
+  atualizarContagem();
+</script>
+
+</body>
+</html>
